@@ -2,13 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import sunset from "./assets/Door-a.jpg";
+import * as firebase from "firebase";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Image source={sunset} style={styles.logo} />
 
-      <Text style={styles.instructions}>Hello World!</Text>
+      <Text style={styles.instructions}>Hello Seattle!</Text>
 
       <Image
         source={{ uri: "https://reactjs.org/logo-og.png" }}
@@ -19,7 +20,7 @@ export default function App() {
         onPress={() => alert("Hello World!")}
         style={{ backgroundColor: "blue" }}
       >
-        <Text style={{ fontSize: 20, color: "#fff" }}>Pick a photo!</Text>
+        <Text style={{ fontSize: 20, color: "#fff" }}>I'm a button!</Text>
       </TouchableOpacity>
     </View>
   );
