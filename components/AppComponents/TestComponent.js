@@ -4,9 +4,7 @@ import Firebase from '../../config/Firebase';
 
 function TestComponent() {
     return (
-        <div>
             <Text> I'm a TEST Component! </Text>
-        </div>
     )
 }
 
