@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import Firebase from '../../config/Firebase';
+import { fbApp } from '../../config/Firebase';
 
 function TestComponent() {
     return (
