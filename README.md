@@ -18,6 +18,10 @@ Environment variables (firebase config values) are stored in a environment.js fi
 
 Note - tried to use [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv) to hide Firebase configuration variables in .env file. .env file was added to .gitignore. and also installed [babel-plugin-inline-dotenv](https://github.com/brysgo/babel-plugin-inline-dotenv) but kept getting errors in the emulators. If you want to use a .env instead, this article has additional steps in the setting up variables section to get the .env working: https://heartbeat.fritz.ai/how-to-build-an-email-authentication-app-with-firebase-firestore-and-react-native-a18a8ba78574#570a
 
+## Navigation
+Expo recommends using React Navigation (instead of React Router for React projects or React Native Router for React Native CLI projects - see https://docs.expo.io/guides/routing-and-navigation/)
+For this project I installed React Navigation (https://reactnavigation.org/docs/getting-started/) and dependencies. I had to separately install missed dependencies.
+
 ## Resources:
 Expo - https://docs.expo.io/
 Expo Go for iPhone
