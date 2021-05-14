@@ -26,7 +26,12 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-const fbApp = firebase.initializeApp(firebaseConfig);
+let fbApp;
+if (!firebase.apps.length) {
+    fbApp = firebase.initializeApp(firebaseConfig);
+  }else {
+    fbApp = firebase.app(); // if already initialized, use that one
+  }
 
 export const auth = fbApp.auth();
 export default fbApp;
