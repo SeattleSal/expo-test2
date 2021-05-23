@@ -7,14 +7,14 @@ import HomeScreen from "./screens/HomeScreen";
 import { fbApp } from "./config/firebase";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AppNavigator } from "./routes/homeStack";
-
+import { AppTabs } from './routes/homeTabs'
 
 // navigation
 // const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
 
 export default function App() {
-  return <AppNavigator />;
+  // return <AppNavigator />;
+  return <AppTabs />;
 }

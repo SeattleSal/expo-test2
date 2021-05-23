@@ -13,7 +13,6 @@ const HomeNavigator = () => (
     <Navigator>
         <Screen name = "Home" component={HomeScreen} />
         <Screen name = "Register" component={RegistrationScreen} />
-
         <Screen name="Login" component={LoginScreen} />
         <Screen name="Test" component={TestScreen} />
     </Navigator>

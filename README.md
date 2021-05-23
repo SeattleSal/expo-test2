@@ -22,6 +22,11 @@ Note - tried to use [react-native-dotenv](https://www.npmjs.com/package/react-na
 Expo recommends using React Navigation (instead of React Router for React projects or React Native Router for React Native CLI projects - see https://docs.expo.io/guides/routing-and-navigation/)
 For this project I installed React Navigation (https://reactnavigation.org/docs/getting-started/) and dependencies. I had to separately install missed dependencies.
 
+I added two types of navigation:
+Stack Navigation
+Bottom Tab Navigation - requires additional npm package npm install @react-navigation/bottom-tabs
+next up - nested navigation!
+
 ## Resources:
 Expo - https://docs.expo.io/
 Expo Go for iPhone
