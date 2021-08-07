@@ -10,11 +10,16 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { AppNavigator } from "./routes/homeStack";
 import { AppTabs } from './routes/homeTabs'
 
+import SignUp from "./screens/SignUp";
+import Login from "./screens/Login";
+import Profile from "./screens/Profile";
+
 // navigation
 // const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
 
 export default function App() {
-  // return <AppNavigator />;
-  return <AppTabs />;
+  return <Login />;
+  // <AppNavigator />;
+  // return <AppTabs />;
 }

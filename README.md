@@ -1,5 +1,9 @@
 # expo-test2
 
+## Currently working on...
+Trying to store user info from the firebase database globally using Redux.
+Source: https://heartbeat.fritz.ai/how-to-build-an-email-authentication-app-with-firebase-firestore-and-react-native-a18a8ba78574#08a0
+
 ## React Native with Expo
 Creating a React Native project with [Expo](https://docs.expo.io/)
 Note - After creating project using expo init, removed the .git that comes with expo so I could track project add to GitHub repo.
