@@ -6,33 +6,50 @@ import {
   TextInput,
   TouchableOpacity, Button
 } from "react-native";
+import Firebase from "../config/firebase";
 
-function Login() {
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { updateEmail, updatePassword, login } from "../actions/user";
+
+function Login( { navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLogin = () => {
+    console.log('loginnnnnn');
+    login();
+    navigation.navigate('Profile');
+    // Firebase.auth()
+    // .signInWithEmailAndPassword(email, password)
+    // .then(() => navigation.navigate('Profile'))
+    // .catch(error => console.log(error));
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Signup Screen</Text>
+      <Text>Login Screen</Text>
       <TextInput
         style={styles.inputBox}
         value={email}
-        onChangeText={(email) => setEmail({ email })}
+        onChangeText={(email) => setEmail(email)}
         placeholder="Email"
         autoCapitalize="none"
       />
       <TextInput
         style={styles.inputBox}
         value={password}
-        onChangeText={(password) => setPassword({ email })}
+        onChangeText={(password) => setPassword(password)}
         placeholder="Password"
         autoCapitalize="none"
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
 
       </TouchableOpacity>
-      <Button title="Don't have an account yet? Sign up" />
+      <Button style={styles.buttonSignup} 
+      title="Don't have an account yet? Sign up"
+      onPress={() => navigation.navigate('SignUp')} />
     </View>
   );
 }
@@ -73,4 +90,18 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ updateEmail, updatePassword, login }, dispatch)
+}
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+// export default Login;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login)

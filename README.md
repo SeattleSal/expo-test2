@@ -3,6 +3,9 @@
 ## Currently working on...
 Trying to store user info from the firebase database globally using Redux.
 Source: https://heartbeat.fritz.ai/how-to-build-an-email-authentication-app-with-firebase-firestore-and-react-native-a18a8ba78574#08a0
+Note the tutorial uses SwitchNavigator which is no longer used in React Navigation version 5 (was available in V4.x). So instead I used a StackNavigator with initialRouteName prop.
+
+Also adding Firestore database.
 
 ## React Native with Expo
 Creating a React Native project with [Expo](https://docs.expo.io/)

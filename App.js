@@ -1,25 +1,24 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
-import RegistrationScreen from "./screens/RegistrationScreen";
-import TestScreen from "./screens/TestScreen";
-import LoginScreen from "./screens/LoginScreen";
-import HomeScreen from "./screens/HomeScreen";
-import { fbApp } from "./config/firebase";
-import { NavigationContainer, StackActions } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { AppNavigator } from "./routes/homeStack";
-import { AppTabs } from './routes/homeTabs'
+// import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 
-import SignUp from "./screens/SignUp";
-import Login from "./screens/Login";
-import Profile from "./screens/Profile";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import ThunkMiddleware from "redux-thunk";
+import AuthStack from "./navigation/homeStack";
+import reducer from "./reducers";
 
-// navigation
-// const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
+const middleware = applyMiddleware(ThunkMiddleware);
+const store = createStore(reducer, middleware);
 
-export default function App() {
-  return <Login />;
-  // <AppNavigator />;
-  // return <AppTabs />;
-}
+const App = () => {
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <AuthStack />
+      </NavigationContainer>
+    </Provider>
+  );
+};
+
+export default App;

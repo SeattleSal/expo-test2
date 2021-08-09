@@ -1,8 +1,9 @@
 // Firebase configuration and connection
 // uses environment variables from environment.js (part of gitignore so not uploaded to github)
 import getEnvVars from '../environment';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase';
+import 'firebase/firestore';
+// import 'firebase/auth';
 
 // import env variables from getEnvVars
 const { REACT_APP_FIREBASE_API_KEY,
@@ -26,12 +27,21 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-let fbApp;
+let Firebase;
 if (!firebase.apps.length) {
-    fbApp = firebase.initializeApp(firebaseConfig);
-  }else {
-    fbApp = firebase.app(); // if already initialized, use that one
+    Firebase = firebase.initializeApp(firebaseConfig);
+    console.log('connected...')
+  } else {
+    Firebase = firebase.app(); // if already initialized, use that one
+    console.log('already connected...')
   }
 
-export const auth = fbApp.auth();
-export default fbApp;
+  // firestore db setup
+  // export const db = firebase.firestore();
+
+  // db.settings({
+  //   timestampsInSnapshots: true
+  // })
+
+// export const fbAuth = fbApp.auth();
+export default Firebase;
